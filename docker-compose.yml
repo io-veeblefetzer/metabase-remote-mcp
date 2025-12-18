@@ -20,25 +20,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # PostgreSQL Database for sample business data
-  sample-db:
-    image: postgres:15-alpine
-    container_name: metabase-sample-db
-    environment:
-      POSTGRES_USER: sample
-      POSTGRES_PASSWORD: sample
-      POSTGRES_DB: sample_data
-    ports:
-      - "5433:5432"
-    volumes:
-      - sample_data:/var/lib/postgresql/data
-      - ./docker/init-sample-db:/docker-entrypoint-initdb.d
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U sample"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
   # Metabase business intelligence platform
   metabase:
     image: metabase/metabase:latest
@@ -50,6 +31,7 @@ services:
       MB_DB_USER: metabase
       MB_DB_PASS: metabase
       MB_DB_HOST: postgres
+      MB_API_KEY: THIS_IS_A_VERY_SECRET_API_KEY
     ports:
       - "3000:3000"
     depends_on:
