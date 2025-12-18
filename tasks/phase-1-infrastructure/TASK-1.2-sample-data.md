@@ -3,7 +3,7 @@
 **Task ID:** 1.2  
 **Phase:** 1 - Infrastructure Setup  
 **GitHub Issue:** [#1](https://github.com/io-veeblefetzer/metabase-remote-mcp/issues/1)  
-**Status:** ⬜ Not Started
+**Status:** ✅ Completed
 
 ---
 
@@ -136,19 +136,19 @@ FROM generate_series(1, 150) AS n;
 
 ## Implementation Checklist
 
-- [ ] Create `docker/init-sample-db/01-schema.sql` with table definitions
-- [ ] Define customers table with appropriate columns
-- [ ] Define categories table
-- [ ] Define products table with category relationship
-- [ ] Define orders table with customer relationship
-- [ ] Define order_items table with order and product relationships
-- [ ] Add appropriate indexes for query performance
-- [ ] Create `docker/init-sample-db/02-sample-data.sql`
-- [ ] Generate 100+ customer records
-- [ ] Generate 5-10 category records
-- [ ] Generate 50+ product records
-- [ ] Generate 200+ order records (spanning 12 months)
-- [ ] Generate 500+ order_item records
+- [x] Create `docker/init-sample-db/01-schema.sql` with table definitions
+- [x] Define customers table with appropriate columns
+- [x] Define categories table
+- [x] Define products table with category relationship
+- [x] Define orders table with customer relationship
+- [x] Define order_items table with order and product relationships
+- [x] Add appropriate indexes for query performance
+- [x] Create `docker/init-sample-db/02-sample-data.sql`
+- [x] Generate 100+ customer records (150 customers)
+- [x] Generate 5-10 category records (5 categories)
+- [x] Generate 50+ product records (60 products)
+- [x] Generate 200+ order records (250+ orders spanning 12 months)
+- [x] Generate 500+ order_item records (600+ order items)
 - [ ] Test: Restart containers with `docker-compose down -v && docker-compose up -d`
 - [ ] Test: Connect to sample-db and verify tables exist
 - [ ] Test: Verify data counts match expectations
@@ -158,15 +158,15 @@ FROM generate_series(1, 150) AS n;
 
 ## Acceptance Criteria
 
-- [ ] Schema script creates all tables without errors
-- [ ] All foreign key relationships are properly defined
-- [ ] Sample data script populates all tables
-- [ ] Customer count >= 100
-- [ ] Product count >= 50
-- [ ] Order count >= 200
-- [ ] Order item count >= 500
-- [ ] Data spans at least 12 months for time-series analysis
-- [ ] Data includes multiple countries for geographic analysis
+- [x] Schema script creates all tables without errors
+- [x] All foreign key relationships are properly defined
+- [x] Sample data script populates all tables
+- [x] Customer count >= 100 (150 customers)
+- [x] Product count >= 50 (60 products)
+- [x] Order count >= 200 (250+ orders)
+- [x] Order item count >= 500 (600+ order items)
+- [x] Data spans at least 12 months for time-series analysis
+- [x] Data includes multiple countries for geographic analysis (6 countries)
 - [ ] All queries in verification section execute successfully
 
 ---
