@@ -10,6 +10,7 @@ import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.ai.tool.annotation.ToolParam;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -20,6 +21,7 @@ import java.util.*;
  * Each public method annotated with @Tool becomes an MCP tool.
  */
 @Service
+@Primary
 public class MetabaseToolService implements ToolCallbackProvider {
 
     private static final Logger log = LoggerFactory.getLogger(MetabaseToolService.class);
