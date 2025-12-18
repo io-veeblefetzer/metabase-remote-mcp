@@ -3,7 +3,7 @@
 **Task ID:** 2.1  
 **Phase:** 2 - OpenAPI Client Generation  
 **GitHub Issue:** [#2](https://github.com/io-veeblefetzer/metabase-remote-mcp/issues/2)  
-**Status:** ⬜ Not Started
+**Status:** ✅ Complete
 
 ---
 
